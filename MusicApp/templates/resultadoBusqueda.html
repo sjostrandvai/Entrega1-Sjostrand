@@ -1,0 +1,19 @@
+{% extends "padre.html" %} {% load static %} {% block content %}
+<h1>RESULTADOS:</h1>
+{% if musicos %}
+<p>Estamos buscando al musico: {{nombre}}</p>
+<br />
+<ul>
+  {% for musico in musicos %}
+  <li>{{musico.nombre}}</li>
+  <li>{{musico.apellido}}</li>
+  <li>{{musico.email}}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No hay datos con esa descripcion</p>
+
+{% endif %}
+
+<p style="color: red">{{respuesta}}</p>
+{% endblock %}
